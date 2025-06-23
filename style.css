@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 12px;
+  font-style: normal;
+  display: flex;
+  text-align: right;
+  padding-right: 10px;
+
+}
+
+p {
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+li {
+  font-size: 13px;
+}
+
+/*temp*/
+.container > div {
+  padding: 5px;
+  padding-bottom: 5%;
+}
+
+.container .header .header-title img {
+  height: 16px;
+  width: 16px;
+}
+
+
+.contact-links img {
+  height: 14px;
+  width: 14px;
+  padding-right: 1%;
+  vertical-align: top;
+
+}
+
+.tech-list li {
+  list-style: none;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+}
+
+.tech-list li img {
+  height: 16px;
+  aspect-ratio: 1;
+  padding-right: 3%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+a:hover {
+  color: #b61638;
+  /*color: #ED244E;*/
+}
+
+.projects-links img {
+  height: 5px;
+  aspect-ratio: 1;
+  padding-right: 2%;
+  vertical-align: middle;
+}
+
+
+
+/*from https://grid.layoutit.com/ */
+.container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 0.8fr; /*middle value was 500px*/
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    ". . ."
+    ". header ."
+    ". tech ."
+    ". dual-columns ."
+    ". . .";
+
+    height: 100vh;
+}
+
+.header {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header-title"
+    "header-text";
+  grid-area: header;
+
+
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.header-title { grid-area: header-title;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text { grid-area: header-text; }
+
+.tech {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tech-title"
+    "tech-list";
+  grid-area: tech;
+
+
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.tech-title { grid-area: tech-title;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.tech-list {
+  display: grid; 
+  grid-template-columns: 0.7fr 0.7fr 0.7fr 0.7fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "tech-1 tech-2 tech-3 tech-4"; 
+  grid-area: tech-list; 
+}
+.tech-1 { grid-area: tech-1; }
+.tech-2 { grid-area: tech-2; }
+.tech-3 { grid-area: tech-3; }
+.tech-4 { grid-area: tech-4; }
+
+.dual-columns {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "contact-title projects-title"
+    "contact-links projects-links";
+  grid-area: dual-columns;
+
+}
+
+.contact-title {
+  grid-area: contact-title;
+
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.projects-title {
+  grid-area: projects-title;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.projects-links {
+  grid-area: projects-links;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.contact-links {
+  grid-area: contact-links;
+  list-style: none;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+
+}
+
+/*end of grid*/
+
+img.external {
+  height: 10px;
+  width: 10px;  
+  display: flex;
+  align-self: first baseline;
+}
+
+@media only screen and (max-width: 1020px) {
+  li {
+    font-size: 10px;
+  }
+  .tech p {
+    font-size: 12px;
+  }
+  .tech-list li img {
+  height: 12px;
+  aspect-ratio: 1;
+  padding-right: 1%;
+  }
+  .tech p {
+    padding-top: 10px;
+  }
+  .header-text p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .tech-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "tech-1 tech-2"
+      "tech-3 tech-4";
+  }
+  .container {
+    grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  }
+}
